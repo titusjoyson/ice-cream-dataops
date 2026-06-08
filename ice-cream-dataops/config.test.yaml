@@ -26,6 +26,8 @@ variables:
         icapi_trigger_client_secret: ${ICAPI_EXTRACTORS_CLIENT_SECRET}
         icapi_extractors_client_id: ${ICAPI_EXTRACTORS_CLIENT_ID}
         icapi_extractors_client_secret: ${ICAPI_EXTRACTORS_CLIENT_SECRET}
+        cron_schedule: 17 0 * * *
+        pause_transformations: false
 
       use_cases:
         oee:

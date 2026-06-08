@@ -108,7 +108,7 @@ built_resources:
       externalId: ds_icapi
     source:
       path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/data_sets/data_sets.DataSet.yaml
-      hash: 069ca95f
+      hash: 5c73b327
     kind: DataSet
     destination: build/data_sets/1.data_sets.DataSet.yaml
   - identifier:
@@ -133,6 +133,34 @@ built_resources:
       hash: 9d813842
     kind: Space
     destination: build/data_models/2.oee_timeseries.space.yaml
+  transformations:
+  - identifier:
+      externalId: contextualize_ts_assets
+    source:
+      path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/transformations/contextualize_ts_assets.Transformation.yaml
+      hash: 8d20ec52
+    kind: Transformation
+    destination: build/transformations/1.contextualize_ts_assets.Transformation.yaml
+    extra_sources:
+    - path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/transformations/contextualize_ts_assets.Transformation.sql
+      hash: f90e215a
+  - identifier:
+      externalId: create_asset_hierarchy
+    source:
+      path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/transformations/create_asset_hierarchy.Transformation.yaml
+      hash: 297a0ef8
+    kind: Transformation
+    destination: build/transformations/3.create_asset_hierarchy.Transformation.yaml
+    extra_sources:
+    - path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/transformations/create_asset_hierarchy.Transformation.sql
+      hash: 50388e68
+  - identifier:
+      externalId: create_asset_hierarchy
+    source:
+      path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/transformations/create_asset_hierarchy.schedule.yaml
+      hash: 95e30af7
+    kind: Schedule
+    destination: build/transformations/5.create_asset_hierarchy.schedule.yaml
   functions: []
 read_modules:
 - dir: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/data_foundation
@@ -140,15 +168,16 @@ read_modules:
   - auth
 - dir: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api
   resource_directories:
+  - transformations
   - raw
   - auth
-  - functions
-  - hosted_extractors
-  - data_models
   - data_sets
+  - hosted_extractors
+  - functions
+  - data_models
 - dir: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee
   resource_directories:
-  - data_models
-  - functions
   - data_sets
   - auth
+  - functions
+  - data_models
