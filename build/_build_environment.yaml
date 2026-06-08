@@ -46,6 +46,63 @@ built_resources:
       hash: de947829
     kind: Database
     destination: build/raw/2.ice-cream-factory-db.Table.Database.yaml
+  hosted_extractors:
+  - identifier:
+      externalId: ICAPI Assets
+    source:
+      path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/hosted_extractors/Ice
+        Cream Factory API/assets/Destination.yaml
+      hash: fb8d3d88
+    kind: Destination
+    destination: build/hosted_extractors/1.Destination.yaml
+  - identifier:
+      externalId: ICAPI Time series
+    source:
+      path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/hosted_extractors/Ice
+        Cream Factory API/timeseries/Destination.yaml
+      hash: d20cbd53
+    kind: Destination
+    destination: build/hosted_extractors/2.Destination.yaml
+  - identifier:
+      externalId: ICAPI Assets
+    source:
+      path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/hosted_extractors/Ice
+        Cream Factory API/assets/Job.yaml
+      hash: 3ffbe134
+    kind: Job
+    destination: build/hosted_extractors/3.Job.yaml
+  - identifier:
+      externalId: ICAPI Time series
+    source:
+      path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/hosted_extractors/Ice
+        Cream Factory API/timeseries/Job.yaml
+      hash: 0226bde2
+    kind: Job
+    destination: build/hosted_extractors/4.Job.yaml
+  - identifier:
+      externalId: ICAPI Assets
+    source:
+      path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/hosted_extractors/Ice
+        Cream Factory API/assets/Mapping.yaml
+      hash: 822163e4
+    kind: Mapping
+    destination: build/hosted_extractors/5.Mapping.yaml
+  - identifier:
+      externalId: ICAPI Time series
+    source:
+      path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/hosted_extractors/Ice
+        Cream Factory API/timeseries/Mapping.yaml
+      hash: aaf9f5e1
+    kind: Mapping
+    destination: build/hosted_extractors/6.Mapping.yaml
+  - identifier:
+      externalId: Ice Cream Factory API
+    source:
+      path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/hosted_extractors/Ice
+        Cream Factory API/Source.yaml
+      hash: ad7e9d3f
+    kind: Source
+    destination: build/hosted_extractors/7.Source.yaml
   data_sets:
   - identifier:
       externalId: ds_icapi
@@ -83,14 +140,15 @@ read_modules:
   - auth
 - dir: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api
   resource_directories:
-  - functions
   - raw
   - auth
+  - functions
+  - hosted_extractors
   - data_models
   - data_sets
 - dir: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee
   resource_directories:
+  - data_models
   - functions
   - data_sets
-  - data_models
   - auth
