@@ -1,0 +1,3 @@
+function_local_venvs
+build
+.env

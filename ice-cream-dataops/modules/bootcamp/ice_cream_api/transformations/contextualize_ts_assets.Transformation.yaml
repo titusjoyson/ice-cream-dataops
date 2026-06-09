@@ -8,6 +8,7 @@ destination:
     destinationType: CogniteTimeSeries
   type: instances
 ignoreNullFields: true
+isPublic: true
 conflictMode: upsert
 # Specify credentials separately like this:
 # You can also use different credentials for running the transformations than the credentials you use to deploy.
